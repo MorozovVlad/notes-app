@@ -1,11 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
-import Home from "./components/screens/home/Home";
+import Router from "./components/Router";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>
-);
+ReactDOM.render(<Router />, document.getElementById("root"));
+
+// import React from "react";
+// import { createRoot } from "react-dom/client";
+// import Router from "./components/Router";
+
+// const container = document.getElementById("app");
+// const root = createRoot(container);
+// root.render(<Router tab="home" />);
