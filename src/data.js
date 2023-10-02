@@ -8,7 +8,7 @@ const data = [
   {
     id: 2,
     title: "In cursus dapibus.2",
-    isCompleted: false,
+    isCompleted: true,
     text: "In quam, amet, sit in morbi elit. Hac integer amet, sapien lorem platea pulvinar lacinia mattis eleifend non et. Orci, lorem cursus et sit tortor, lacinia augue non sit dictum faucibus. Justo molestie lectus cursus malesuada in luctus vitae mattis leo, hac eleifend nisi vitae interdum tortor, efficitur leo, ornare in pellentesque nisi et non habitasse amet, nec dictum eleifend ex. Platea lorem malesuada nisi dolor velit orci, et in nunc nunc non mattis justo quam, libero, amet, leo, venenatis nisi sed libero, et. Pulvinar consectetur amet, vulputate ornare augue vel arcu lectus quam, integer lorem arcu adipiscing velit nec ipsum eleifend venenatis in quis, adipiscing pellentesque urna quis, mattis platea non et. Molestie platea orci, id id efficitur tempus et pulvinar nulla mollis morbi integer faucibus. Velit nulla quis, sed ipsum nulla non pulvinar ornare quam, ipsum arcu nunc arcu in amet, in nec imperdiet nec sit sed si.",
   },
   {
