@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import data from "../../../data.js";
+// import data from "../../../data.js";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { AiOutlineHome } from "react-icons/ai";
