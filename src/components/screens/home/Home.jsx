@@ -1,11 +1,21 @@
 import React from "react";
 import NoteItem from "./NoteItem";
-import data from "../../../data.js";
+// import data from "../../../data.js";
 import { useState } from "react";
 import CreateNote from "./item/CreateNote";
+import { useEffect } from "react";
 
 const Home = () => {
-  const [_data, setData] = useState(data);
+  const [_data, setData] = useState([]);
+  console.log(_data);
+  useEffect(() => {
+    const raw = localStorage.getItem("_data") || [];
+    setData(JSON.parse(raw));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("_data", JSON.stringify(_data));
+  }, [_data]);
 
   const changeNote = (id) => {
     const copy = [..._data];
@@ -20,7 +30,7 @@ const Home = () => {
     setData([
       ..._data,
       {
-        id: _data.at(-1).id + 1,
+        id: new Date(),
         title,
         text,
         isCompleted: false,

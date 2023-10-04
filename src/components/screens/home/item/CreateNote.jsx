@@ -6,9 +6,9 @@ const CreateNote = ({ addNote }) => {
   const [text, setText] = useState("");
 
   return (
-    <div className="w-3/5 mx-auto bg-slate-800 text-xl mb-2 content-center py-4 rounded-lg cursor-pointer">
+    <div className="w-3/5 mx-auto bg-slate-700 text-xl mb-1 content-center py-1 rounded-lg cursor-pointer">
       <input
-        className="bg-slate-800 border-none w-full mx-5 outline-none"
+        className="bg-slate-700 border-none w-full px-5 outline-none py-1"
         type="text"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
@@ -16,7 +16,7 @@ const CreateNote = ({ addNote }) => {
         placeholder="Enter title"
       />
       <input
-        className="bg-slate-800 border-none w-full mx-5 outline-none py-3"
+        className="bg-slate-700 border-none  w-full px-5 outline-none py-1 h-10"
         type="text"
         onChange={(e) => setText(e.target.value)}
         value={text}
