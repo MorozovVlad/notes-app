@@ -1,28 +1,56 @@
 import React from "react";
 import { useState } from "react";
 
-const CreateNote = ({ addNote }) => {
+const CreateNote = ({ _data, setData }) => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  console.log(_data);
+  const addNote = (title, text) => {
+    if (_data.length == 0) {
+      var id = 0;
+    } else {
+      var id = _data.length;
+    }
+    setData((_data) => [
+      ..._data,
+      {
+        id,
+        title,
+        text,
+        isCompleted: false,
+        date: new Date().toISOString(),
+      },
+    ]);
+    setTitle("");
+    setText("");
+  };
 
   return (
-    <div className="w-3/5 mx-auto bg-slate-700 text-xl mb-1 content-center py-1 rounded-lg cursor-pointer">
+    <div className="w-3/5 mx-auto bg-slate-700 text-xl mb-0 content-center pt-1 rounded-lg cursor-pointer">
       <input
-        className="bg-slate-700 border-none w-full px-5 outline-none py-1"
+        className="bg-slate-700 border-none w-full px-5 outline-none py-3"
         type="text"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        onKeyPress={(e) => e.key === "Enter" && addNote(title)}
         placeholder="Enter title"
       />
-      <input
-        className="bg-slate-700 border-none  w-full px-5 outline-none py-1 h-10"
+      <hr />
+      <textarea
+        className="bg-slate-700 border-none  w-full h-36 px-5 outline-none py-3"
         type="text"
         onChange={(e) => setText(e.target.value)}
         value={text}
-        onKeyPress={(e) => e.key === "Enter" && addNote(text)}
         placeholder="Enter text"
       />
+      <hr />
+      <button
+        className="text-center w-full bg-slate-600 rounded-b-lg p-4 text-3xl hover:bg-slate-500 transition-colors ease-in-out duration-300"
+        onClick={() => {
+          addNote(title, text);
+        }}
+      >
+        Enter
+      </button>
     </div>
   );
 };

@@ -1,16 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-// import data from "../../../data.js";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { AiOutlineHome } from "react-icons/ai";
 import cn from "classnames";
 
 const NotePage = () => {
+  const data = JSON.parse(localStorage._data);
   const { id } = useParams();
-  const leftArrow = Number(id) - 1;
-  const rightArrow = data.length - Number(id);
-  console.log(data[id - 1].isCompleted);
+  const leftArrow = Number(id);
+  const rightArrow = data.length - Number(id) - 1;
+  console.log(data[id].isCompleted);
   console.log(data);
   return (
     <div>
@@ -32,10 +32,10 @@ const NotePage = () => {
 
           <h1
             className={cn("mx-auto", {
-              "line-through": data[id - 1].isCompleted,
+              "line-through": data[id].isCompleted,
             })}
           >
-            {data[id - 1].title}
+            {data[id].title}
           </h1>
           {rightArrow ? (
             <Link to={`/note/${[Number(id) + 1]}`}>
@@ -45,7 +45,7 @@ const NotePage = () => {
             ""
           )}
         </div>
-        <p className="w-3/5 mx-auto text-xl">{data[id - 1].text}</p>
+        <p className="w-3/5 mx-auto text-xl">{data[id].text}</p>
       </div>
     </div>
   );
