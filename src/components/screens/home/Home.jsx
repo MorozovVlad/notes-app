@@ -6,10 +6,8 @@ import { useEffect } from "react";
 
 const Home = () => {
   const [_data, setData] = useState([]);
-  console.log(_data);
 
   if (localStorage.getItem("_data")) {
-    console.log("++++++");
   } else {
     let arr = [];
     localStorage.setItem("_data", JSON.stringify(arr));
@@ -33,7 +31,7 @@ const Home = () => {
   const removeNote = (id) => setData([..._data].filter((t) => t.id !== id));
 
   return (
-    <div className="  text-white  mx-auto portrait:w-full portrait:px-10">
+    <div className="  text-white  mx-auto portrait:w-full portrait:px-5">
       <h1 className="text-center py-10 text-4xl">My notes</h1>
       {_data.map((note) => (
         <NoteItem
