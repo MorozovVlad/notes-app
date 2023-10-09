@@ -33,7 +33,7 @@ const Home = () => {
   const removeNote = (id) => setData([..._data].filter((t) => t.id !== id));
 
   return (
-    <div className="bg-gray-900 h-screen text-white  mx-auto">
+    <div className="  text-white  mx-auto portrait:w-full portrait:px-10">
       <h1 className="text-center py-10 text-4xl">My notes</h1>
       {_data.map((note) => (
         <NoteItem

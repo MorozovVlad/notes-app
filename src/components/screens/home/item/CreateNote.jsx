@@ -26,7 +26,7 @@ const CreateNote = ({ _data, setData }) => {
   };
 
   return (
-    <div className="w-3/5 mx-auto bg-slate-700 text-xl mb-0 content-center pt-1 rounded-lg cursor-pointer">
+    <div className="w-3/5 mx-auto bg-slate-700 text-xl mb-0 content-center pt-1 rounded-lg cursor-pointer portrait:w-full ">
       <input
         className="bg-slate-700 border-none w-full px-5 outline-none py-3"
         type="text"
@@ -44,12 +44,12 @@ const CreateNote = ({ _data, setData }) => {
       />
       <hr />
       <button
-        className="text-center w-full bg-slate-600 rounded-b-lg p-4 text-3xl hover:bg-slate-500 transition-colors ease-in-out duration-300"
+        className="text-center w-full bg-slate-600 rounded-b-lg p-4 text-3xl hover:bg-slate-500 transition-colors ease-in-out duration-300 portrait:w-full"
         onClick={() => {
           addNote(title, text);
         }}
       >
-        Enter
+        add a note
       </button>
     </div>
   );

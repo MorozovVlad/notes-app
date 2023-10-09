@@ -8,7 +8,7 @@ import { BsTrash } from "react-icons/bs";
 const NoteItem = ({ note, changeNote, removeNote }) => {
   let date = new Date(note.date).toLocaleString();
   return (
-    <div className="w-3/5 mx-auto bg-slate-800 text-xl mb-2 flex content-center py-4 rounded-lg cursor-pointer hover:bg-slate-500 transition-colors ease-in-out duration-300">
+    <div className="w-3/5 mx-auto bg-slate-800 text-xl mb-2 flex content-center py-4 rounded-lg cursor-pointer hover:bg-slate-500 transition-colors ease-in-out duration-300 portrait:w-full portrait:px-10">
       <button onClick={() => changeNote(note.id)}>
         <Check isCompleted={note.isCompleted} />
       </button>
@@ -16,16 +16,14 @@ const NoteItem = ({ note, changeNote, removeNote }) => {
       <Link
         to={`/note/${note.id}`}
         note={note}
-        className={cn("", {
+        className={cn("w-full flex", {
           "line-through": note.isCompleted,
         })}
       >
-        <span className="w-96 justify-between flex">
-          <span>{note.title}</span>
-          <span className=" ">{date}</span>
-        </span>
+        <span>{note.title}</span>
+        <span className="ml-auto mr-5">{date}</span>
       </Link>
-      <button className="ml-auto mr-4" onClick={() => removeNote(note.id)}>
+      <button className="ml-auto mr-5" onClick={() => removeNote(note.id)}>
         <BsTrash
           size={30}
           className="hover:text-red-700 transition-colors ease-in-out duration-200"
