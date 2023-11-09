@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <div className="  text-white  mx-auto portrait:w-full portrait:px-5">
-      <h1 className="text-center py-10 text-4xl">My notes</h1>
+      <h1 className="text-center py-10 text-4xl">Мои заметки</h1>
       {_data.map((note) => (
         <NoteItem
           key={note.id}

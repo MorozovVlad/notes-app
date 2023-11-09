@@ -31,7 +31,7 @@ const CreateNote = ({ _data, setData }) => {
         type="text"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        placeholder="Enter title"
+        placeholder="Название заметки"
       />
       <hr />
       <textarea
@@ -39,7 +39,7 @@ const CreateNote = ({ _data, setData }) => {
         type="text"
         onChange={(e) => setText(e.target.value)}
         value={text}
-        placeholder="Enter text"
+        placeholder="Текст заметки"
       />
       <hr />
       <button
@@ -48,7 +48,7 @@ const CreateNote = ({ _data, setData }) => {
           addNote(title, text);
         }}
       >
-        add a note
+        Добавить
       </button>
     </div>
   );
